@@ -1,0 +1,383 @@
+.App {
+  min-height: 100vh;
+}
+
+.landingPageContainer,
+.meetPage {
+  min-height: 100vh;
+  padding: 0 clamp(20px, 6vw, 88px);
+  background: #f7f8fb;
+}
+
+.landingPageContainer nav,
+.navBar {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brandMark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 8px;
+  color: white;
+  background: var(--color-primary);
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.landingPageContainer nav h2,
+.navBar h2 {
+  font-size: 19px;
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+.navlist,
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.navlist a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navlist a:hover {
+  color: var(--color-primary);
+}
+
+.navlist .navLogin {
+  padding: 9px 15px;
+  border: 1px solid #d9deea;
+  border-radius: 7px;
+  color: var(--color-ink);
+  background: white;
+}
+
+.landingMainContainer {
+  display: flex;
+  align-items: center;
+  max-width: 1120px;
+  min-height: calc(100vh - 76px);
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.landingCopy {
+  max-width: 690px;
+}
+
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.landingMainContainer h1 {
+  max-width: 630px;
+  margin-bottom: 16px;
+  font-size: clamp(44px, 7vw, 70px);
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+}
+
+.landingMainContainer h1 span {
+  color: var(--color-primary);
+}
+
+.landingMainContainer .landingLead {
+  max-width: 460px;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.landingActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 17px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primaryLink {
+  color: white;
+  background: var(--color-primary);
+}
+
+.primaryLink:hover {
+  background: var(--color-primary-dark);
+}
+
+.secondaryLink {
+  color: var(--color-ink);
+  border-color: #d9deea;
+  background: white;
+}
+
+.secondaryLink:hover {
+  background: #f0f2f7;
+}
+
+.meetPage {
+  background: #f7f8fb;
+}
+
+.navBar {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.navActions {
+  gap: 7px;
+}
+
+.navActions .MuiButton-root,
+.joinForm .MuiButton-root {
+  text-transform: none;
+  font-weight: 650;
+}
+
+.meetContainer {
+  display: flex;
+  align-items: center;
+  max-width: 1120px;
+  min-height: calc(100vh - 76px);
+  margin: 0 auto;
+  padding: 64px 0;
+}
+
+.leftPanel {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.leftPanel h1 {
+  margin-bottom: 12px;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.leftPanel p {
+  margin-bottom: 22px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.joinForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 520px;
+}
+
+.joinForm .MuiTextField-root {
+  flex: 1 1 240px;
+}
+
+.joinForm .MuiButton-root {
+  min-width: 112px;
+  border-radius: 7px;
+}
+
+.historyPage {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 24px 56px;
+}
+
+.historyHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 76px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.historyHeader h1 {
+  font-size: 22px;
+  letter-spacing: -0.035em;
+}
+
+.historyContent {
+  display: grid;
+  gap: 10px;
+  padding-top: 22px;
+}
+
+.historyCard.MuiCard-root {
+  border-color: var(--color-border);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.historyEmpty,
+.historyError {
+  padding: 32px 16px;
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.historyEmpty strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-ink);
+  font-size: 16px;
+}
+
+.authPage {
+  min-height: 100vh;
+  background: white;
+}
+
+.authBrandPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(28px, 5vw, 68px);
+  color: white;
+  background: #4655a8;
+}
+
+.authBrandPanel .brandMark {
+  color: #4655a8;
+  background: white;
+}
+
+.authBrandPanel h1 {
+  max-width: 500px;
+  margin: auto 0 12px;
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.authBrandPanel p {
+  max-width: 420px;
+  color: #e1e5f5;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.authFormPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.authForm {
+  width: 100%;
+  max-width: 400px;
+}
+
+.authForm h2 {
+  margin: 18px 0 7px;
+  font-size: 28px;
+  letter-spacing: -0.045em;
+}
+
+.authForm .authIntro {
+  margin-bottom: 20px;
+  color: var(--color-muted);
+}
+
+.authForm .MuiButton-root {
+  text-transform: none;
+  font-weight: 650;
+}
+
+.authError {
+  margin-top: 10px;
+  color: #a52b35;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .landingPageContainer,
+  .meetPage {
+    padding-inline: 20px;
+  }
+
+  .landingPageContainer nav,
+  .navBar {
+    min-height: 68px;
+  }
+
+  .navlist,
+  .navActions {
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .landingMainContainer,
+  .meetContainer {
+    min-height: calc(100vh - 68px);
+    padding: 48px 0;
+  }
+
+  .authBrandPanel {
+    display: none;
+  }
+
+  .authFormPanel {
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 440px) {
+  .landingPageContainer nav h2,
+  .navBar h2 {
+    font-size: 17px;
+  }
+
+  .navlist {
+    gap: 11px;
+  }
+
+  .navActions {
+    gap: 2px;
+  }
+
+  .navActions .MuiButton-root {
+    min-width: auto;
+    padding-inline: 7px;
+  }
+}

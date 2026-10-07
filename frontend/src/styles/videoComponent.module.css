@@ -1,0 +1,403 @@
+.meetVideoContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #f8f9ff;
+    background: #171c27;
+}
+
+.lobby {
+    display: grid;
+    min-height: 100vh;
+    padding: 24px;
+    place-items: center;
+    background: #f7f8fb;
+}
+
+.lobbyCard {
+    display: grid;
+    gap: 14px;
+    width: min(100%, 430px);
+    padding: 28px;
+    border: 1px solid #e1e5ed;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.brandMark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 8px;
+    color: #fff;
+    background: #4e63e8;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.eyebrow {
+    margin: 0;
+    color: #4e63e8;
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.lobbyCard h1 {
+    margin: -10px 0 0;
+    color: #172033;
+    font-size: 30px;
+    letter-spacing: -.05em;
+}
+
+.muted {
+    margin: -10px 0 0;
+    color: #687386;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.lobbyCard :global(.MuiButton-root),
+.chattingArea :global(.MuiButton-root) {
+    min-height: 42px;
+    border-radius: 7px;
+    text-transform: none;
+    font-weight: 700;
+}
+
+.lobbyCard :global(.MuiButton-contained) {
+    background: #4b5db5;
+}
+
+.lobbyCard :global(.MuiButton-contained:hover) {
+    background: #384890;
+}
+
+.lobbyPreview {
+    width: 100%;
+    max-height: 210px;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    background: #e9edf6;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+.mediaError {
+    margin: 0;
+    padding: 11px 13px;
+    border: 1px solid rgba(236, 99, 99, .3);
+    border-radius: 10px;
+    color: #ffb8b8;
+    background: rgba(159, 43, 54, .2);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.lobbyCard .mediaError {
+    color: #a12d36;
+    background: #fff2f2;
+}
+
+.callHeader {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-height: 68px;
+    padding: 12px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    background: #171c27;
+}
+
+.callHeader > div {
+    display: grid;
+    gap: 4px;
+}
+
+.callHeader strong {
+    font-size: 15px;
+}
+
+.callHeader span {
+    color: #aeb8d1;
+    font-size: 12px;
+}
+
+.callHeader .mediaError {
+    max-width: 480px;
+}
+
+.videoStage {
+    position: relative;
+    display: grid;
+    flex: 1;
+    min-height: 400px;
+    padding: 24px 24px 108px;
+    place-items: center;
+}
+
+.waitingCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    padding: 32px;
+    text-align: center;
+}
+
+.waitingCard h2 {
+    margin: 0 0 10px;
+    font-size: 21px;
+    letter-spacing: -.03em;
+}
+
+.waitingCard p {
+    margin: 0 0 14px;
+    color: #aeb8d1;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.waitingCard > span {
+    color: #b8c3e4;
+    font-size: 12px;
+}
+
+.localVideoCard,
+.remoteVideoCard {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 8px;
+    background: #252c39;
+}
+
+.localVideoCard {
+    position: absolute;
+    z-index: 1;
+    right: 24px;
+    bottom: 100px;
+    width: clamp(150px, 21vw, 270px);
+    aspect-ratio: 16 / 10;
+}
+
+.meetUserVideo,
+.remoteVideoCard video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.meetUserVideo {
+    transform: scaleX(-1);
+}
+
+.localVideoCard > span,
+.remoteVideoCard > span {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    left: 10px;
+    width: fit-content;
+    padding: 5px 8px;
+    border-radius: 6px;
+    color: white;
+    background: rgba(11, 16, 29, .72);
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.conferenceView {
+    position: absolute;
+    inset: 24px 24px 108px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: stretch;
+}
+
+.remoteVideoCard {
+    width: 100%;
+    height: 100%;
+}
+
+.buttonContainers {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 20px calc(15px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    background: #171c27;
+}
+
+.buttonContainers :global(.MuiIconButton-root) {
+    width: 48px;
+    height: 48px;
+    color: #f3f5fc;
+    background: #2b3550;
+    transition: background 150ms ease;
+}
+
+.buttonContainers :global(.MuiIconButton-root:hover) {
+    background: #3a4665;
+}
+
+.buttonContainers :global(.MuiSvgIcon-root) {
+    font-size: 22px;
+}
+
+.buttonContainers .controlDisabled {
+    color: #ffbebe;
+    background: #633b49;
+}
+
+.buttonContainers .endCall {
+    color: white;
+    background: #d8434f;
+}
+
+.buttonContainers .endCall:hover {
+    background: #bd303e;
+}
+
+.chatRoom {
+    position: absolute;
+    z-index: 4;
+    top: 82px;
+    right: 18px;
+    bottom: 92px;
+    width: min(360px, calc(100vw - 36px));
+    padding: 18px;
+    border: 1px solid #e5e9f2;
+    border-radius: 10px;
+    color: #172033;
+    background: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .22);
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chatHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #edf0f6;
+}
+
+.chatHeader h1 {
+    margin: 0 0 4px;
+    font-size: 17px;
+}
+
+.chatHeader p,
+.chatMessage p {
+    margin: 0;
+    color: #687386;
+    font-size: 12px;
+}
+
+.chattingDisplay {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    padding: 16px 2px;
+}
+
+.chatMessage {
+    display: grid;
+    gap: 5px;
+}
+
+.chatMessage span {
+    width: fit-content;
+    max-width: 100%;
+    padding: 9px 12px;
+    border-radius: 4px 12px 12px;
+    color: #27334d;
+    background: #f1f3fa;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+}
+
+.chatEmpty {
+    margin: auto;
+    max-width: 220px;
+    color: #687386;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.chattingArea {
+    display: flex;
+    gap: 8px;
+    padding-top: 13px;
+    border-top: 1px solid #edf0f6;
+}
+
+.chattingArea :global(.MuiTextField-root) {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 620px) {
+    .callHeader {
+        min-height: 62px;
+        padding-inline: 16px;
+    }
+
+    .callHeader .mediaError {
+        max-width: 52%;
+        font-size: 11px;
+    }
+
+    .videoStage {
+        min-height: calc(100vh - 132px);
+        padding: 18px 12px 104px;
+    }
+
+    .conferenceView {
+        inset: 18px 12px 104px;
+    }
+
+    .localVideoCard {
+        right: 12px;
+        bottom: 94px;
+        width: clamp(120px, 36vw, 190px);
+    }
+
+    .buttonContainers {
+        gap: 9px;
+        padding-inline: 12px;
+    }
+
+    .buttonContainers :global(.MuiIconButton-root) {
+        width: 44px;
+        height: 44px;
+    }
+
+    .chatRoom {
+        top: 72px;
+        right: 10px;
+        bottom: 82px;
+        width: min(360px, calc(100vw - 20px));
+    }
+}
