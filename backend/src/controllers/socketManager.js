@@ -5,11 +5,12 @@ let messages = {}
 let timeOnline = {}
 
 export const connectToSocket = (server) => {
-    const allowedOrigins = process.env.FRONTEND_URL
-        ? process.env.FRONTEND_URL.split(",").map((origin) => origin.trim())
-        : process.env.NODE_ENV === "production"
-            ? []
-            : ["http://localhost:5173"];
+    const allowedOrigins = [...new Set([
+        ...(process.env.NODE_ENV === "production"
+            ? ["https://handshake-call.onrender.com"]
+            : ["http://localhost:5173"]),
+        ...(process.env.FRONTEND_URL || "").split(",").map((origin) => origin.trim()).filter(Boolean)
+    ])];
     const io = new Server(server, {
         cors: {
             origin: allowedOrigins,

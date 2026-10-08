@@ -7,15 +7,12 @@ import userRoutes from "./routes/user.routes.js";
 
 const app = express();
 const server = createServer(app);
-const allowedOrigins = process.env.FRONTEND_URL
-    ? process.env.FRONTEND_URL.split(",").map((origin) => origin.trim())
-    : process.env.NODE_ENV === "production"
-        ? []
-        : ["http://localhost:5173"];
-
-if (process.env.NODE_ENV === "production" && allowedOrigins.length === 0) {
-    console.error("[STARTUP] FRONTEND_URL is not set; cross-origin browser requests will be denied.");
-}
+const allowedOrigins = [...new Set([
+    ...(process.env.NODE_ENV === "production"
+        ? ["https://handshake-call.onrender.com"]
+        : ["http://localhost:5173"]),
+    ...(process.env.FRONTEND_URL || "").split(",").map((origin) => origin.trim()).filter(Boolean)
+])];
 
 connectToSocket(server);
 
