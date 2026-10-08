@@ -9,12 +9,18 @@ const app = express();
 const server = createServer(app);
 const allowedOrigins = process.env.FRONTEND_URL
     ? process.env.FRONTEND_URL.split(",").map((origin) => origin.trim())
-    : "*";
+    : process.env.NODE_ENV === "production"
+        ? []
+        : ["http://localhost:5173"];
+
+if (process.env.NODE_ENV === "production" && allowedOrigins.length === 0) {
+    console.error("[STARTUP] FRONTEND_URL is not set; cross-origin browser requests will be denied.");
+}
 
 connectToSocket(server);
 
 app.set("port", Number(process.env.PORT || 8000));
-app.use(cors({ origin: allowedOrigins }));
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json({ limit: "40kb" }));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 

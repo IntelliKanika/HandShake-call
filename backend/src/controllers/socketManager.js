@@ -7,13 +7,15 @@ let timeOnline = {}
 export const connectToSocket = (server) => {
     const allowedOrigins = process.env.FRONTEND_URL
         ? process.env.FRONTEND_URL.split(",").map((origin) => origin.trim())
-        : "*";
+        : process.env.NODE_ENV === "production"
+            ? []
+            : ["http://localhost:5173"];
     const io = new Server(server, {
         cors: {
             origin: allowedOrigins,
             methods: ["GET", "POST"],
             allowedHeaders: ["*"],
-            credentials: allowedOrigins !== "*"
+            credentials: true
         }
     });
 
